@@ -14870,3 +14870,27 @@ The error occurred while evaluating nil.[]):
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2011-10-01 20:24:08 +0530
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+Rendered users/show.html.haml within layouts/application (37.5ms)
+Completed 200 OK in 51ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/editable" for 127.0.0.1 at 2011-10-01 20:24:12 +0530
+  Processing by UsersController#editable as HTML
+  Parameters: {"value"=>"sameer123", "id"=>"editable"}
+Completed   in 0ms
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/users_controller.rb:86:in `editable'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
