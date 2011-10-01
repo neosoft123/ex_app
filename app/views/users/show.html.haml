@@ -1,6 +1,6 @@
 %script{:type => "text/javascript"}
   $(function() { 
-  $('#editable').editable('/users/editable', {
+  $('.editable').editable('/users/editable', {
   submit : 'OK',
   cancel : 'cancel',
   style : "inherit",
@@ -11,16 +11,16 @@
 %h1 Users Details
 %br
 %h2 User Name
-%span{:id => "User_name_#{@user.id}", :class => "editable", :id => "editable"}= @user.name 
+%span{:id => "User_name_#{@user.id}", :class => "editable"}= @user.name 
 %br
 %h2 Phone Number
-%span{:id => "User_phone_#{@user.id}", :class => "editable", :id => "editable"}= @user.phone
+%span{:id => "User_phone_#{@user.id}", :class => "editable"}= @user.phone
 %br
 %h2 Email
-%span{:id => "User_email_#{@user.id}", :class => "editable", :id => "editable"}= @user.email
+%span{:id => "User_email_#{@user.id}", :class => "editable"}= @user.email
 %br
 %h2 Customer Type
-%span{:id => "User_customer_type_#{@user.id}", :class => "editable", :id => "editable"}= @user.customer_type
+%span{:id => "User_customer_type_#{@user.id}", :class => "editable"}= @user.customer_type
 %br
 = link_to "Home", root_path 
 || 
